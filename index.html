@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+        <meta charset="utf-8">
+        <meta name="author" content="Alexis GERONA, LAPIN AMK">
+        <meta name="description" content="Bootstrap final project">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <title>Bootstrap final project GERONA</title>
+
+        <!-- Bootstrap core CSS -->
+        <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Custom fonts for this template -->
+        <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+
+        <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.min.js"></script>
+
+        <script src="lib/jquery-3.1.0.js"></script>
+        <script src="dist/jquery.imgexplode.min.js"></script>
+
+        <!-- Custom styles for this template -->
+        <link href="css/grayscale.min.css" rel="stylesheet">
+    </head>
+
+    <body id="page-top">
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand js-scroll-trigger" href="#page-top">COVER PAGE</a>
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link js-scroll-trigger" href="#Home">HOME</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link js-scroll-trigger" href="#Lapland">LAPLAND</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link js-scroll-trigger" href="#Auroras">AURORAS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link js-scroll-trigger" href="#Guides">GUIDES</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link js-scroll-trigger" href="#signup">CONTACT</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Header -->
+        <header class="masthead">
+            <div class="container d-flex h-100 align-items-center">
+                <div class="mx-auto text-center title" style="margin-bottom: 3%">
+                    <h1 class="mx-auto my-0 text-uppercase">LAPLAND</h1>
+                    <h2 class="text-white-50 mx-auto mt-2 mb-5">We will make you want to visit finland.</h2>
+                    <a href="#Lapland" class="btn btn-primary js-scroll-trigger">Get Started</a>
+                </div>
+            </div>
+        </header>
+
+        <!-- Home Section -->
+        <section id="Home" class="Home-section text-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <h2 class="text-black mb-4" style="color:#0066ff">General informations</h2>
+                        <p class="text-black-50">
+                            Finland is a North European nation bordering Sweden, Norway and Russia. Its capital, Helsinki, occupies a peninsula and the surrounding islands of the Baltic Sea. It is home to the 18th-century Suomenlinna Maritime Fortress, the trendy Design District and various museums. The province of Arctic Lapland, a vast wilderness of national parks and ski resorts, is the perfect place to see the northern lights.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-lg-8 mx-auto align-items-center">
+                    <img src="img/5W5L3JBHJUI6RIRH7UVQBFDGXQ.jpg" class="img-fluid" id="target" style="margin-bottom:10%">
+                </div>
+
+                <script>
+                    var i = 1;
+                    var changeSrc = true;
+                    var $target = $("#target");
+
+                    function pictureChange(){
+                        if (changeSrc == false) {
+                            $target.attr('src', 'img/20180324_BLP521.jpg');
+                            changeSrc = true;
+                        } else {
+                            $target.attr('src', 'img/5W5L3JBHJUI6RIRH7UVQBFDGXQ.jpg');
+                            changeSrc = false;
+                        }
+                        setTimeout(explode,1000);
+                    }
+
+                    function explode() {
+                        $target.explodeRestore();
+                        setTimeout(function () {
+                            $target.explode({
+                                maxWidth: 15,
+                                minWidth: 5,
+                                radius: 50,
+                                release: true,
+                                recycle: true,
+                                explodeTime: 220,
+                                canvas: true,
+                                maxAngle: 360,
+                                gravity: 0,
+                                groundDistance: 150,
+                            });
+                        }, 300);
+                    }
+
+                    const sleep = (milliseconds) => {
+                        return new Promise(resolve => setTimeout(resolve, milliseconds))
+                    }
+
+                    var interval = setInterval(function() {
+                        sleep(300).then(() => {
+                            pictureChange();
+                        })
+
+                    }, 11000);
+
+                    function execute() {
+                        if (i == 3) {
+                            clearInterval(interval);
+                        }
+                        i++;
+                    }
+
+                    $(document).ready(function() {
+                        pictureChange();
+                    });
+
+                    $(window).resize(function(){
+                        pictureChange();
+                    });
+                </script>
+
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <h2 class="text-black mb-4" style="color:#0066ff">Capital city</h2>
+                        <div class="row align-items-center no-gutters mb-4 mb-lg-5">
+                            <p class="text-black-50 mb-0 text-justify">
+                                In southern Finland, the capital Helsinki occupies a peninsula in the Gulf of Finland.<br/>
+                            </p>
+                            <div class="col-xl-6 col-lg-7">
+                                <p class="text-black-50 mb-0 text-justify" style="margin-right:5%">
+                                    Its central avenue, Mannerheimintie, includes various institutions including the national museum that traces the history of the country, from the Stone Age to the present day. It also has the imposing Parliament and the Museum of Contemporary Art Kiasma. All of red brick, richly decorated, Ouspenski Cathedral overlooks the harbor.<br/><br/>
+                                </p>
+                            </div>
+                            <div class="col-xl-6">
+                                <img class="myImg" src="img/Helsinki.jpg" alt="Helsinki" width="100%" height="auto">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-8 mx-auto">
+                        <h2 class="text-black mb-4" style="color:#0066ff">National parks</h2>
+                        <div class="row align-items-center no-gutters mb-4 mb-lg-5">
+                            <div class="col-xl-6" style="margin-top: 3%">
+                                <img class="myImg" src="img/Finland-Oulanka-National-Park.jpg" alt="National parks" width="100%" height="auto">
+                            </div>
+                            <div class="col-xl-6">
+                                <div class="featured-text text-center text-lg-left">
+                                    <p class="text-black-50 mb-0 text-justify" style="margin-left:5%;margin-top: 5%">
+                                        There are no less than 39 national parks in Finland, and a fortieth park to be inaugurated in 2017 in honor of the centenary of our country's independence. These areas of unspoiled nature are spread over our entire territory, between the archipelago, lakes and woodlands, peat bogs or the area of the mountains of Lapland. Each of the Finnish national parks illustrates the natural features of the corresponding region, such as rapids, collapse ditches and sandy isthmuses.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-8 mx-auto">
+                            <h2 class="text-black mb-4" style="color:#0066ff">Seasons</h2>
+                            <p class="text-black-50" style="margin-bottom: 3%">
+                                Finland is rich in all its exciting contrasts, between its four well-differentiated seasons, the midnight sun and winter darkness, the city and countryside, or the east and west of the country.
+                            </p>
+                            <div class="row justify-content-center no-gutters mb-5 mb-lg-0">
+                                <div class="col-lg-6" style="margin-bottom: 2%">
+                                    <img class="myImg" src="img/finlande-paijanne.1491525.jpg" alt="Spring" width="100%" height="auto">
+                                </div>
+                                <div class="col-lg-6" style="margin-bottom: 2%">
+                                    <img class="myImg" src="img/images.jpg" alt="Summer" width="93%" height="auto">
+                                </div>
+                                <div class="col-lg-6" style="margin-bottom: 2%">
+                                    <img class="myImg" src="img/Header_Linnunlaulu_ruska_autumn-400x300.jpg" alt="Autumn" width="100%" height="85%">
+                                </div>
+                                <div class="col-lg-6" style="margin-bottom: 2%">
+                                    <img class="myImg" src="img/Header_kaamos_jordan_yllas_sun-400x300.jpg" alt="Winter" width="93%" height="85%">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lapland Section -->
+        <section id="Lapland" class="laplandTitel text-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <h2 class="text-white mb-4">REASONS TO VISIT FINLAND</h2>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="LaplandBis" class="Lapland-section text-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <h2 class="text-white mb-4">Santa</h2>
+                        <div class="row align-items-center no-gutters mb-4 mb-lg-5">
+                            <p class="text-white-50 mb-0 text-justify">
+                                Santa is also known and loved around the world. But did you know that he was born in Finland and that you can meet him in person? Children of all ages are welcome to visit Santa Claus' office in Rovaniemi every day of the year and to be received in private audience for an exchange of a few words with the friendly old man in red while immersing himself in a unique enchanted atmosphere. As everyone knows, Santa's mission is to bring happiness every year to the four corners of the planet with the help of his faithful fur companions reindeer.
+                            </p>
+                            <div class="row">
+                                <div class="col-xl-6">
+                                    <img class="myImg" src="img/maxresdefault.jpg" alt="Santa" width="100%" height="auto">
+                                </div>
+                                <div class="col-xl-6">
+                                    <img class="myImg" src="img/maxresdefaultBIS.jpg" alt="Santa" width="100%" height="auto">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-8 mx-auto">
+                        <h2 class="text-white mb-4">Le rituel du sauna</h2>
+                        <div class="row align-items-center no-gutters mb-4 mb-lg-5">
+                            <div class="featured-text text-center text-lg-left">
+                                <p class="text-white-50 mb-0 text-justify" style="margin-top: 5%">
+                                    If you want to understand Finland and its people, getting started in the sauna is a good starting point. The sauna is so integral to Finnish culture that it ranks at the top of our national symbols.<br/><br/>
+
+                                    With its seawater pool, the Allas Sea Pool sports and relaxation complex is based on a new concept inspired by the spa tradition that has marked the history of the Baltic coast. You will be able to discover new sauna experiences all year round both in front of the sea and in the middle of a relaxed urban environment.<br/><br/>
+
+                                    The Löyly Design Sauna, which is located not far from the city center at the southern end of the Helsinki peninsula, was recently inaugurated. This contemporary seaside resort also features a restaurant offering dishes that are representative of the finest Finnish cuisine, while the hotel's wooden building and its modern design are well worth the visit.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row align-items-center no-gutters mb-4 mb-lg-5">
+                            <iframe style="margin-left: 5%; margin-right: 5%" width="650" height="366" src="https://www.youtube.com/embed/j2U2NGqRGGY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
+                        </div>
+                    </div>
+                    <div class="col-lg-8 mx-auto">
+                        <h2 class="text-white mb-4">Silence and relaxation</h2>
+                        <div class="row align-items-center no-gutters mb-4 mb-lg-5">
+                            <div class="featured-text text-center text-lg-left">
+                                <p class="text-white-50 mb-0 text-justify" style="margin-top: 5%">
+                                    In the hustle and bustle of today's life, what is most valuable is what is the rarest, in this case the vast spaces nothing for oneself, peace and serenity , the feeling of having time. Have all the room you need to breathe, all the time you need to dream. These precious treasures await you in Finland, where the lakes are numerous and the inhabitants much less.<br/><br/>
+
+                                    A handful of pristine nature, a pinch of Finnish sauna, a spoonful of traditional health and relaxation treatments from home, a good portion of wild ingredients and some moderate physical activities in addition, this is the exclusive recipe that we propose for you. to assure you an absolutely total relaxation.<br/><br/>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-8 mx-auto">
+                            <h2 class="text-white mb-4">Picture</h2>
+                            <div class="row">
+                                <div class="col-sm">
+                                    <img class="myImg" src="img/6.5518_4897-400x300.jpg" alt="Snow" width="100%" height="100%">
+                                </div>
+                                <div class="col-sm">
+                                    <img class="myImg" src="img/25987228946_8ab774d389_z.jpg" alt="Amazing views" width="100%" height="100%">
+                                </div>
+
+                                <div class="col-sm">
+                                    <img class="myImg" src="img/Lapland-sunset.jpg" alt="Lapland sunset" width="100%" height="auto">
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-12">
+                                    <img class="myImg" src="img/Lapland-forest.jpg" alt="Lapland forest" width="100%" height="100%">
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-sm">
+                                    <img class="myImg" src="img/Lapland-lake-summer.jpg" alt="Lapland lake summer" width="100%" height="100%">
+                                </div>
+                                <div class="col-sm">
+                                    <img class="myImg" src="img/tampere-Lapland-city.jpg" alt="Lapland city" width="100%" height="100%">
+                                </div>
+                                <div class="col-sm">
+                                    <img class="myImg" src="img/lake .jpg" alt="Lake" width="100%" height="100%">
+                                </div>
+                                <div class="col-sm">
+                                    <img class="myImg" src="img/Forest-Lapland.jpg" alt="Forest Lapland" width="100%" height="100%">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Auroras Section -->
+        <section id="Auroras" class="aurorasTitel text-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <h2 class="text-white mb-4">Auroras</h2>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="AurorasBis" class="Auroras-section bg-light">
+            <div class="container">
+
+                <!-- Featured Project Row -->
+                <div class="row align-items-center no-gutters mb-4 mb-lg-5">
+                    <div class="col-xl-6 col-lg-7">
+                        <img class="img-fluid mb-3 mb-lg-0 myImg" src="img/aurora-boreal.jpg" alt="Auroras" alt="">
+                    </div>
+                    <div class="col-xl-6 col-lg-5">
+                        <div class="featured-text text-center text-lg-left">
+                            <h4>Auroras</h4>
+                            <p class="text-black-50 mb-0">
+                                The magic of the aurora borealis show is for many visitors one of the strongest moments of their existence. These celestial phenomena are observed in Finnish Lapland roughly 200 nights a year, or about one night out of two provided the sky is clear. To really make the most of these luminous spurts, it is recommended to wait until it is dark and to choose an observation site far from any source of light pollution, for example streetlights and neon lights in the city.<br/><br/>
+
+                                This year, you will be able to further enhance your Northern Lights experience with the opening of various accommodation sites in Northern Finland, designed for enhanced observation of the northern sky and the spectacular light events it hosts. the desired effect is that the observer has the impression of floating in the atmosphere. Discover the TreeHouse Hotel in Rovaniemi, the Aurora Dome in Muonio and the Glass Villas in Kemi.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project One Row -->
+                <div class="row justify-content-center no-gutters mb-5 mb-lg-0">
+                    <div class="col-lg-6">
+                        <img class="img-fluid" src="img/demo-image-01.jpg" alt="">
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="bg-black text-center h-100 project">
+                            <div class="d-flex h-100">
+                                <div class="project-text w-100 my-auto text-center text-lg-left">
+                                    <h4 class="text-white">Misty</h4>
+                                    <p class="mb-0 text-white-50">An example of where you can put an image of a project, or anything else, along with a description.</p>
+                                    <hr class="d-none d-lg-block mb-0 ml-0">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Two Row -->
+                <div class="row justify-content-center no-gutters">
+                    <div class="col-lg-6">
+                        <img class="img-fluid" src="img/demo-image-02.jpg" alt="">
+                    </div>
+                    <div class="col-lg-6 order-lg-first">
+                        <div class="bg-black text-center h-100 project">
+                            <div class="d-flex h-100">
+                                <div class="project-text w-100 my-auto text-center text-lg-right">
+                                    <h4 class="text-white">Mountains</h4>
+                                    <p class="mb-0 text-white-50">Another example of a project with its respective description. These sections work well responsively as well, try this theme on a small screen!</p>
+                                    <hr class="d-none d-lg-block mb-0 mr-0">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Guides Section -->
+        <section id="Guides" class="Guides-section bg-black">
+            <div class="container">
+
+                <div class="row">
+
+                    <div class="col-md-4 mb-3 mb-md-0">
+                        <div class="card py-4 h-100">
+                            <div class="card-body text-center">
+                                <i class="fas fa-map-marked-alt text-primary mb-2"></i>
+                                <h4 class="text-uppercase m-0">Address</h4>
+                                <hr class="my-4">
+                                <div class="small text-black-50">4923 Market Street, Orlando FL</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 mb-3 mb-md-0">
+                        <div class="card py-4 h-100">
+                            <div class="card-body text-center">
+                                <i class="fas fa-envelope text-primary mb-2"></i>
+                                <h4 class="text-uppercase m-0">Email</h4>
+                                <hr class="my-4">
+                                <div class="small text-black-50">
+                                    <a href="#">hello@yourdomain.com</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 mb-3 mb-md-0">
+                        <div class="card py-4 h-100">
+                            <div class="card-body text-center">
+                                <i class="fas fa-mobile-alt text-primary mb-2"></i>
+                                <h4 class="text-uppercase m-0">Phone</h4>
+                                <hr class="my-4">
+                                <div class="small text-black-50">+1 (555) 902-8832</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Signup Section -->
+        <section id="signup" class="signup-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-10 col-lg-8 mx-auto text-center">
+
+                        <i class="far fa-paper-plane fa-2x mb-2 text-white"></i>
+                        <h2 class="text-white mb-5">Subscribe to receive updates!</h2>
+
+                        <form class="form-inline d-flex">
+                            <input type="email" class="form-control flex-fill mr-0 mr-sm-2 mb-3 mb-sm-0" id="inputEmail" placeholder="Enter email address...">
+                            <button type="submit" class="btn btn-primary mx-auto">Subscribe</button>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact-section bg-black">
+            <div class="container">
+
+                <div class="row">
+
+                    <div class="col-md-4 mb-3 mb-md-0">
+                        <div class="card py-4 h-100">
+                            <div class="card-body text-center">
+                                <i class="fas fa-map-marked-alt text-primary mb-2"></i>
+                                <h4 class="text-uppercase m-0">Address</h4>
+                                <hr class="my-4">
+                                <div class="small text-black-50">4923 Market Street, Orlando FL</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 mb-3 mb-md-0">
+                        <div class="card py-4 h-100">
+                            <div class="card-body text-center">
+                                <i class="fas fa-envelope text-primary mb-2"></i>
+                                <h4 class="text-uppercase m-0">Email</h4>
+                                <hr class="my-4">
+                                <div class="small text-black-50">
+                                    <a href="#">hello@yourdomain.com</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 mb-3 mb-md-0">
+                        <div class="card py-4 h-100">
+                            <div class="card-body text-center">
+                                <i class="fas fa-mobile-alt text-primary mb-2"></i>
+                                <h4 class="text-uppercase m-0">Phone</h4>
+                                <hr class="my-4">
+                                <div class="small text-black-50">+1 (555) 902-8832</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="social d-flex justify-content-center">
+                    <a href="#" class="mx-2">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="mx-2">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="mx-2">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-black small text-center text-white-50">
+            <div class="container">
+                Copyright &copy; Your Website 2019
+            </div>
+        </footer>
+
+        <!-- Pop up -->
+        <div id="myModal" class="modal">
+            <span class="close">&times;</span>
+            <img class="modal-content" id="img01">
+            <div id="caption"></div>
+        </div>
+
+        <!-- Bootstrap core JavaScript -->
+        <script src="vendor/jquery/jquery.min.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+        <!-- Plugin JavaScript -->
+        <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+        <!-- Custom scripts for this template -->
+        <script src="js/grayscale.min.js"></script>
+    </body>
+</html>
