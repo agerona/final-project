@@ -454,9 +454,7 @@ footer {
     transition: 0.3s;
 }
 
-.myImg:hover {
-    opacity: 0.9;
-}
+.myImg:hover {opacity: 0.9;}
 
 /* The Modal (background) */
 .modal {
