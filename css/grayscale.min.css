@@ -5,14 +5,15 @@
 */
 #mainNav {
     min-height:56px;
-    background-color:white
+    background-color: white
 }
 
 #mainNav .navbar-toggler {
     font-size:80%;
     padding:.75rem;
     color:#00ff99;
-    border:1px solid #00ff99
+    border:1px solid #00ff99;
+    margin-right: 3%
 }
 
 #mainNav .navbar-toggler:focus {
@@ -26,14 +27,14 @@
 }
 
 #mainNav .navbar-nav .nav-item:hover {
-    color:white;
-    outline:0;
-    background-color:transparent
+    color: white;
+    outline: 0;
+    background-color: transparent
 }
 
 #mainNav .navbar-nav .nav-item:active,#mainNav .navbar-nav .nav-item:focus {
-    outline:0;
-    background-color:transparent
+    outline: 0;
+    background-color: transparent
 }
 
 @media (min-width:992px) {
