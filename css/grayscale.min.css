@@ -454,7 +454,9 @@ footer {
     transition: 0.3s;
 }
 
-.myImg:hover {opacity: 0.9;}
+.myImg:hover {
+    opacity: 0.9;
+}
 
 /* The Modal (background) */
 .modal {
@@ -498,8 +500,12 @@ footer {
 }
 
 @keyframes zoom {
-    from {transform:scale(0)} 
-    to {transform:scale(1)}
+    from {
+        transform:scale(0)
+    } 
+    to {
+        transform:scale(1)
+    }
 }
 
 /* The Close Button */
@@ -508,6 +514,7 @@ footer {
     font-size: 40px;
     font-weight: bold;
     transition: 0.3s;
+    padding: 0 50px;
 }
 
 .close:hover,
