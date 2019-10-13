@@ -569,23 +569,33 @@ footer {
 
 /* Rotation */
 .element {
-  display: inline-block;
-  background-color: #0074d9;
-  font-size: 1px;
-  padding: 1px;
-  color: white;
-  margin-right: 5px;
-  margin-left: 5px;
-  animation: roll 5s infinite;
-  transform: rotate(30deg);
-  opacity: .7;
+    display: inline-block;
+    background-color: #0074d9;
+    font-size: 1px;
+    padding: 1px;
+    color: white;
+    margin-right: 5px;
+    margin-left: 5px;
+    animation: roll 5s infinite;
+    transform: rotate(30deg);
+    opacity: .7;
 }
 
 @keyframes roll {
-  0% {
-    transform: rotate(0);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Guide number */
+.policeBumberGuide {
+    font-family: "test";
+}
+
+@font-face {
+    font-family: "test";
+    src: url("police/British Script.otf");
 }
